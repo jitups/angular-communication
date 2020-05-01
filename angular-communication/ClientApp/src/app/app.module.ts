@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { Parent1Component } from './parent1/parent1.component';
 import { Parent2Component } from './parent2/parent2.component';
+import { GrandparentComponent } from './grandparent/grandparent.component';
 import { SharedService } from './shared.service';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SharedService } from './shared.service';
     FetchDataComponent,
     Parent1Component,
     Parent2Component,
+    GrandparentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,8 +33,7 @@ import { SharedService } from './shared.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'parent1', component: Parent1Component },
-      { path: 'parent2', component: Parent2Component },
+      { path: 'grand-parent', component: GrandparentComponent },
     ])
   ],
   providers: [SharedService],

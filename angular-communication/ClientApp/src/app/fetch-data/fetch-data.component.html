@@ -2,9 +2,9 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!forecasts && !weatherForecasts"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="weatherForecasts">
   <thead>
     <tr>
       <th>Date</th>
@@ -14,11 +14,28 @@
     </tr>
   </thead>
   <tbody>
+    <tr *ngFor="let weatherForecast of weatherForecasts">
+      <td>{{ weatherForecast.date }}</td>
+      <td>{{ weatherForecast.temperatureC }}</td>
+      <td>{{ weatherForecast.temperatureF }}</td>
+      <td>{{ weatherForecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Temp. (F)</th>
+      <th>Humidity</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+      <td>{{ forecast.city.name }}</td>
+      <td>{{ forecast.tempratureF }}</td>
+      <td>{{ forecast.humidity }}</td>
     </tr>
   </tbody>
 </table>

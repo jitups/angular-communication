@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { SharedService } from '../shared.service';
 })
 /** parent2 component*/
 export class Parent2Component implements OnInit {
+  @ViewChild("textMessage", { static: false }) textMessage: ElementRef;
   message: string;
 
   /** parent2 ctor */
@@ -16,10 +17,12 @@ export class Parent2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.service.currentMessage.subscribe(message => this.message = message)
+    this.service.message$.subscribe(message => {
+      this.message = message;
+    });
   }
 
   newMessage() {
-    this.service.changeMessage1("Hello from Sibling1")
+    this.service.setMessage(this.textMessage.nativeElement.value);
   }
 }

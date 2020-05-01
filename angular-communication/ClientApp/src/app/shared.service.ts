@@ -3,15 +3,19 @@ import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class SharedService {
-  private messageSource = new BehaviorSubject('default message');
-  currentMessage = this.messageSource.asObservable();
+  public message$ = new Subject<string>();
 
   constructor() {
-
+    this.message$.next('default');
   }
 
 
-  changeMessage1(message: string) {
-    this.messageSource.next(message);
+  setMessage(message: string) {
+    this.message$.next(message);
+  }
+
+  getMessage(): Observable<any> {
+    let test = this.message$.asObservable();
+    return test;
   }
 }
