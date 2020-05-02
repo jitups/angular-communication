@@ -11,6 +11,7 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <RootNamespace>angular_communication</RootNamespace>
+    <UserSecretsId>c9da8333-cb53-43e3-9a2c-ea89b7855b4c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

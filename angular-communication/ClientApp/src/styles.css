@@ -5,6 +5,10 @@ a {
   color: #0366d6;
 }
 
+a:hover{
+    color:blueviolet;
+}
+
 code {
   color: #e01a76;
 }
@@ -13,4 +17,8 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+body{
+    background-color:#f0f0ff;
 }

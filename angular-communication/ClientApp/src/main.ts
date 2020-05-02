@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 export function getBaseApiUrl() {
-  return 'https://localhost:44329/';
+  return environment.apiEndpoint;
 }
 
 const providers = [
