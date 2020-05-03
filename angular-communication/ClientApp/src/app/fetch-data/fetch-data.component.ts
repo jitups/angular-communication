@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public weatherForecasts: WeatherForecast[];
   public forecasts: Forecast[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
